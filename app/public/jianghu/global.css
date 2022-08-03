@@ -1,0 +1,12 @@
+html:not([data-theme=dark]){
+    --kt-app-bg-color: #f5f8fa;
+}
+.page-bg{
+    background-color: var(--kt-app-bg-color);
+}
+.custom-table td:not(:first-child):not(.v-picker td), th:not(:first-child):not(.v-picker th){
+    border-left: none !important;
+}
+.custom-table .v-data-footer{
+    border-top: none !important;
+}

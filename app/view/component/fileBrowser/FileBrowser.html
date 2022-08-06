@@ -332,7 +332,7 @@ Vue.component("file-browser", {
                     }
                 }
             });
-            window.vtoast.success(this.pasteMode === 'cut' ? '文件移动成功' : '文件复制成功');
+            window.vtoast.success(this.pasteMode === 'cut' ? '文件移动成功' : '文件粘贴成功');
             this.$refs.list.load();
             if (fromDir.startsWith(toDir)) {
                 this.$refs.tree.readFolderByPath(toDir);

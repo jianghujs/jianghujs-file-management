@@ -263,6 +263,7 @@ CREATE TABLE `_resource_request_log` (
   `packageId` varchar(255) DEFAULT NULL COMMENT 'resource package id',
   `userIp` varchar(255) DEFAULT NULL COMMENT '用户ip;',
   `userAgent` varchar(255) DEFAULT NULL COMMENT '设备信息',
+  `userId` varchar(255) DEFAULT NULL COMMENT '用户ID',
   `deviceId` varchar(255) DEFAULT NULL COMMENT '设备id',
   `userIpRegion` varchar(255) DEFAULT NULL COMMENT '用户Ip区域',
   `executeSql` varchar(255) DEFAULT NULL COMMENT '执行的sql',

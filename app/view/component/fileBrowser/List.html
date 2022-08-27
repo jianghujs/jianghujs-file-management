@@ -287,6 +287,7 @@
                     }
                 });
                 item.newFolderPopper = false;
+                item.basename = newFilename;
                 this.load();
                 const isDir = item.path[item.path.length - 1] === "/";
                 const pathDir = isDir ? item.path : item.path.substring(0, item.path.lastIndexOf('/')+1);

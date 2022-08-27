@@ -110,32 +110,32 @@ Vue.component("tree", {
             }, 600);
         },
         async readFolder(item) {
-            this.$emit("loading", true);
-            const rows = (await window.jianghuAxios({
-                data: {
-                    appData: {
-                        pageId: 'materialManagement',
-                        actionId: 'list',
-                        actionData: { path: item.path },
-                    }
-                }
-            })).data.appData.resultData.rows;
-            // eslint-disable-next-line require-atomic-updates
-            item.children = rows
-                // 只展示文件夹
-                .filter(item => item.type === "dir")
-                .map(item => {
-                    if (item.type === "dir" && !item.children) {
-                        item.children = [];
-                    }
-                    return item;
-                });
-            setTimeout(()=> {
-                if (this.open.indexOf(item.path) === -1){
-                    this.open.push(item.path); 
-                }
-            }, 100);  
-            this.$emit("loading", false);
+            // this.$emit("loading", true);
+            // const rows = (await window.jianghuAxios({
+            //     data: {
+            //         appData: {
+            //             pageId: 'materialManagement',
+            //             actionId: 'list',
+            //             actionData: { path: item.path },
+            //         }
+            //     }
+            // })).data.appData.resultData.rows;
+            // // eslint-disable-next-line require-atomic-updates
+            // item.children = rows
+            //     // 只展示文件夹
+            //     .filter(item => item.type === "dir")
+            //     .map(item => {
+            //         if (item.type === "dir" && !item.children) {
+            //             item.children = [];
+            //         }
+            //         return item;
+            //     });
+            // setTimeout(()=> {
+            //     if (this.open.indexOf(item.path) === -1){
+            //         this.open.push(item.path); 
+            //     }
+            // }, 100);  
+            // this.$emit("loading", false);
         },
         async readFolderByPath(path) {
             const item = this.findItem(path);

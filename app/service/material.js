@@ -192,7 +192,7 @@ class MaterialService extends Service {
         const { path, newFilename } = actionData;
         pathCheck(path);
         const targetPath = nodePath.join(materialRepoDir, path);
-        const targetDir = targetPath.substring(0,targetPath.lastIndexOf('/')+1);
+        const targetDir = nodePath.resolve(targetPath,'../');
         const newFilenamePath = nodePath.join(targetDir, newFilename);
       
         const isFileExists = await exists(targetPath);

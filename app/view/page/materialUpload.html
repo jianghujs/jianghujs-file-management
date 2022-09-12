@@ -3,7 +3,7 @@
 {% block vue_template %}
 <jh-layout-v3>
   <v-card>
-    <file-browser :operation-option="operationOption"/>
+    <file-browser/>
   </v-card>
 </jh-layout-v3>
 {% endblock %}
@@ -28,20 +28,6 @@
     },
     mounted() { },
     methods: {
-      async onPasteItem(fromPath, toFolder) {
-        await window.jianghuAxios({
-          data: {
-            appData: {
-              pageId: 'materialManagement',
-              actionId: 'moveFile',
-              actionData: {
-                fromPath, toFolder
-              },
-            }
-          }
-        });
-        window.vtoast.success('<$ constantUiMap.btn.movedSuccess $>');
-      }
     }
   })
 </script>

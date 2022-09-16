@@ -20,7 +20,7 @@ module.exports = (appInfo) => {
 
   return {
     appId,
-    appTitle: "openjianghu 文档管理",
+    appTitle: "文件管理",
     appLogo: `${appId}/public/img/logo.png`,
     appType: "single",
     appDirectoryLink: "/",

@@ -31,17 +31,17 @@
               multiple
               @change="add"
           />
-          <v-btn color="success" depressed @click="$refs.inputUpload.click()"
+          <v-btn small color="success" depressed @click="$refs.inputUpload.click()"
                  title="<$ constantUiMap.common.select $><$ constantUiMap.btn.file $>">
             <v-icon class="mr-1" small>mdi-file-plus</v-icon>
             <$ constantUiMap.common.select $><$ constantUiMap.btn.file $>
           </v-btn>
-          <v-btn depressed @click="upload" class="ml-1" :disabled="!files || files.length === 0"
+          <v-btn small depressed @click="upload" class="ml-1" :disabled="!files || files.length === 0"
                  title="<$ constantUiMap.btn.uploadAll $>">
             <v-icon class="mr-1" small>mdi-file-upload</v-icon>
             <$ constantUiMap.btn.uploadAll $>
           </v-btn>
-          <v-btn depressed @click="clear" class="ml-1" :disabled="!files || files.length === 0"
+          <v-btn small depressed @click="clear" class="ml-1" :disabled="!files || files.length === 0"
                  title="<$ constantUiMap.btn.removeAll $>">
             <v-icon class="mr-1" small>mdi-file-remove</v-icon>
             <$ constantUiMap.btn.removeAll $>

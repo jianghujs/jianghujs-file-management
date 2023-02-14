@@ -17,7 +17,7 @@ const os = require("os"),
     exists = util.promisify(fs.exists),
     copyFile = util.promisify(fs.copyFile);
 
-const actionDataScheme = Object.freeze({
+const appDataSchema = Object.freeze({
     list: {
         type: "object",
         additionalProperties: true,
@@ -95,7 +95,7 @@ class MaterialService extends Service {
 
     async list() {
         const actionData = this.ctx.request.body.appData.actionData;
-        validateUtil.validate(actionDataScheme.list, actionData);
+        validateUtil.validate(appDataSchema.list, actionData);
         const { materialRepoDir } = this.app.config;
         let { path } = actionData;
         pathCheck(path);
@@ -147,7 +147,7 @@ class MaterialService extends Service {
 
     async mkdir() {
         const actionData = this.ctx.request.body.appData.actionData;
-        validateUtil.validate(actionDataScheme.mkdir, actionData);
+        validateUtil.validate(appDataSchema.mkdir, actionData);
         const { materialRepoDir } = this.app.config;
         const { path } = actionData;
         pathCheck(path);
@@ -158,7 +158,7 @@ class MaterialService extends Service {
     async copyFile() {
         const actionData = this.ctx.request.body.appData.actionData;
         const { materialRepoDir } = this.app.config;
-        validateUtil.validate(actionDataScheme.copyFile, actionData);
+        validateUtil.validate(appDataSchema.copyFile, actionData);
         const { fromDir, toDir, filename } = actionData
         pathCheck(fromDir);
         pathCheck(toDir);
@@ -173,7 +173,7 @@ class MaterialService extends Service {
     async moveFile() {
         const actionData = this.ctx.request.body.appData.actionData;
         const { materialRepoDir } = this.app.config;
-        validateUtil.validate(actionDataScheme.moveFile, actionData);
+        validateUtil.validate(appDataSchema.moveFile, actionData);
         const { fromDir, toDir, filename } = actionData;
         pathCheck(fromDir);
         pathCheck(toDir);
@@ -188,7 +188,7 @@ class MaterialService extends Service {
     async renameFile() {
         const actionData = this.ctx.request.body.appData.actionData;
         const { materialRepoDir } = this.app.config;
-        validateUtil.validate(actionDataScheme.renameFile, actionData);
+        validateUtil.validate(appDataSchema.renameFile, actionData);
         const { path, newFilename } = actionData;
         pathCheck(path);
         const targetPath = nodePath.join(materialRepoDir, path);
@@ -204,7 +204,7 @@ class MaterialService extends Service {
 
     async delete() {
         const actionData = this.ctx.request.body.appData.actionData;
-        validateUtil.validate(actionDataScheme.delete, actionData);
+        validateUtil.validate(appDataSchema.delete, actionData);
         const { materialRepoDir } = this.app.config;
         const { path } = actionData;
         pathCheck(path);
@@ -244,7 +244,7 @@ class MaterialService extends Service {
 
     async useMaterial() {
         const actionData = this.ctx.request.body.appData.actionData;
-        validateUtil.validate(actionDataScheme.useMaterial, actionData);
+        validateUtil.validate(appDataSchema.useMaterial, actionData);
         const { materialRepoDir, articleMaterialDir } = this.app.config;
         const { path, articleId } = actionData;
         pathCheck(path);
